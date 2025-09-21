@@ -40,8 +40,8 @@ export default function ProductsPage() {
     fetchCategories();
   }, [products, searchTerm, selectedCategory]);
 
-  const API_URL = 'http://radah-gamesclub.com/server/api/product/';
-  const API_URL_CATEGORIES = 'http://radah-gamesclub.com/server/api/categorie/'; // Django endpoint
+  const API_URL = 'https://radah-gamesclub.com/server/api/product/';
+  const API_URL_CATEGORIES = 'https://radah-gamesclub.com/server/api/categorie/'; // Django endpoint
 
   const fetchCategories = async () => {
       const res = await axios.get(API_URL_CATEGORIES); 
