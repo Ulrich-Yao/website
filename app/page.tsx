@@ -22,14 +22,14 @@ export default function HomePage() {
   const [showVideo, setShowVideo] = useState(false);
 
   const fetchCategories = () => {
-    fetch('http://radah-gamesclub.com/server/api/categorie/')
+    fetch('https://radah-gamesclub.com/server/api/categorie/')
       .then(response => response.json())
       .then(data => setCategorie(data))
       .catch(error => alert('Impossible de charger'));
   };
 
   const fetchLanding = () => {
-    fetch('http://radah-gamesclub.com/server/api/landing/')
+    fetch('https://radah-gamesclub.com/server/api/landing/')
       .then(response => response.json())
       .then(data => setLanding(data))
       .catch(error => alert('Impossible de charger'));
