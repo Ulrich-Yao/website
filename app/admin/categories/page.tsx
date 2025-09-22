@@ -23,7 +23,7 @@ export default function CategoriesPage() {
     description: '',
   });
 
-  const API_URL = 'http://radah-gamesclub.com/server/api/categorie/'; // Django endpoint  
+  const API_URL = 'https://radah-gamesclub.com/server/api/categorie/'; // Django endpoint  
 
   useEffect(() => {
     fetchCategories();
