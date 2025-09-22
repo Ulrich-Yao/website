@@ -50,8 +50,8 @@ export default function QuestionsPage() {
   });
 
   // Constants
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://radah-gamesclub.com/server/api/questions/';
-  const RESPONSES_API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://radah-gamesclub.com/server/api/user-responses/';
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://radah-gamesclub.com/server/api/questions/';
+  const RESPONSES_API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://radah-gamesclub.com/server/api/user-responses/';
 
   // Effects
   useEffect(() => {
