@@ -28,7 +28,7 @@ export default function NewsPage() {
     movie: false,
   });
 
-  const API_URL = 'http://radah-gamesclub.com/server/api/news/';
+  const API_URL = 'https://radah-gamesclub.com/server/api/news/';
 
   const fetchNews = async () => {
     try {
