@@ -43,8 +43,8 @@ export default function ProfilsPage() {
   const [showModal, setShowModal] = useState(false);
   const [preview, setPreview] = useState<string | null>(null);
 
-  const API_URL = 'http://radah-gamesclub.com/server/api/profil/';
-  const API_URL_CATEGORIES = 'http://radah-gamesclub.com/server/api/categorie/';
+  const API_URL = 'https://radah-gamesclub.com/server/api/profil/';
+  const API_URL_CATEGORIES = 'https://radah-gamesclub.com/server/api/categorie/';
 
   useEffect(() => {
     fetchProfils();
