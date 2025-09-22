@@ -23,7 +23,7 @@ export default function LandingPage() {
     photo: ''
   });
   // 🔹 URL de ton API Django
-  const API_URL = 'http://radah-gamesclub.com/server/api/landing/';
+  const API_URL = 'https://radah-gamesclub.com/server/api/landing/';
 
   useEffect(() => {
     fetchLandings();
