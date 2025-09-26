@@ -73,34 +73,47 @@ export default function CategoriesPage() {
 
   /** 🔹 Submit (Create ou Update) */
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
+  try {
+    if (selectedImage) {
+      // 🔹 Si image uploadée
       const formDataToSend = new FormData();
       formDataToSend.append('name', formData.name);
       formDataToSend.append('description', formData.description);
-      if (selectedImage) {
-        formDataToSend.append('photo', selectedImage);
-      }
+      formDataToSend.append('photo', selectedImage);
 
       if (editingCategory) {
-        // Update
-        await axios.put(`${API_URL}${editingCategory.id}/`, formDataToSend, {
+        // PATCH plutôt que PUT
+        await axios.patch(`${API_URL}${editingCategory.id}/`, formDataToSend, {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
       } else {
-        // Create
         await axios.post(API_URL, formDataToSend, {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
       }
+    } else {
+      // 🔹 Si aucune image uploadée → JSON simple
+      const payload = {
+        name: formData.name,
+        description: formData.description,
+        photo: formData.photo,
+      };
 
-      fetchCategories();
-      resetForm();
-    } catch (error) {
-      console.error('Erreur lors de la sauvegarde:', error);
+      if (editingCategory) {
+        await axios.patch(`${API_URL}${editingCategory.id}/`, payload);
+      } else {
+        await axios.post(API_URL, payload);
+      }
     }
-  };
+
+    fetchCategories();
+    resetForm();
+  } catch (error) {
+    console.error('Erreur lors de la sauvegarde:', error);
+  }
+};
 
   /** 🔹 Edit */
   const handleEdit = (category: Category) => {
